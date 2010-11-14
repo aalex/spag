@@ -9,14 +9,14 @@ machine.o: machine.cpp
 rule.o: rule.cpp
 	g++ -Wall -fPIC -c  -o rule.o rule.cpp
 
-spag.so: state.o machine.o rule.o
+spag.so: rule.o machine.o state.o 
 	g++ -shared -Wl,-soname,libspag.so -o libspag.so rule.o state.o machine.o
 
 libspag.a: state.o machine.o rule.o
 	ar rcs libspag.a state.o machine.o rule.o
 
-run: spag.so main.c
-	g++ -Wall -Werror -o run -L. -lspag main.c
+run: spag.so main.cpp
+	g++ -Wall -Werror -o run -L. -lspag main.cpp
 
 clean:
 	rm -rf *.so *.o run *.so.1.0.1

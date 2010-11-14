@@ -26,10 +26,12 @@ namespace spag
 {
      std::string &Machine::startup()
      {
-        return root_.enter();
+        return root_->enter();
      }
-     bool trigger(std::string &event)
+     bool Machine::trigger(std::string &event)
      {
          Rule *rule = root_->find_rule(event);
+         (void) rule; // TODO
+         return true;
      }
 }; // spag

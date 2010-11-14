@@ -37,9 +37,8 @@ namespace spag
             /** Arguments to give to the slots */
             std::string args_;
             /** Special flags. For example, a transition can be a timeout after some time the state machine didn't switch to another state. */
-            int flags;
+            int flags_;
         public:
-            std::string &get_event() { return event_; }
             Rule(std::string &event, std::string &target, std::string &args, int flags) :
                 event_(event),
                 target_(target),
@@ -50,6 +49,7 @@ namespace spag
             std::string &get_event() { return event_; }
             std::string &get_target() { return target_; }
             std::string &get_args() { return args_; }
+            int get_flags() { return flags_; }
     };
 }; // spag
 

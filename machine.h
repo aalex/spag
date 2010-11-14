@@ -23,6 +23,8 @@
 
 #include <boost/bind.hpp>
 #include <string>
+#include "rule.h"
+#include "state.h"
 
 namespace spag
 {
@@ -39,15 +41,9 @@ namespace spag
             Machine(State *root) :
                 root_(root)
             { }
-            std::string &startup()
-            {
-                return root_.enter();
-            }
-            bool trigger(std::string &event)
-            {
-                Rule *rule = root_->find_rule(event);
-            }
-    }
+            std::string &startup();
+            bool trigger(std::string &event);
+    };
 }; // spag
 
 #endif

@@ -52,31 +52,32 @@ namespace spag
             OnEnterSignal on_enter_signal_;
             OnLeaveSignal on_leave_signal_;
 
-            State(std::string &name, int flags) : 
+            State(const std::string &name, int flags) : 
                 name_(name),
                 flags_(flags)
             {}
-            State(std::string &name) : 
+            State(const std::string &name) : 
                 name_(name),
                 flags_(0)
             {}
             ~State() {}
             bool add_child(State *child);
-            std::string &get_name()
+            const std::string &get_name()
             {
                 return name_;
             }
-            State *find_child(std::string &name);
-            bool has_child(std::string &name);
-            Rule *find_rule(std::string &event);
+            State *find_child(const std::string &name);
+            bool has_child(const std::string &name);
+            Rule *find_rule(const std::string &event);
             bool add_rule(Rule *rule);
-            std::string &apply_event(std::string &event);
-            std::string &enter();
+            const std::string &apply_event(const std::string &event);
+            const std::string &enter();
             void leave();
             bool is_currently_in()
             {
                 return currently_in_;
             }
+            int get_flags() { return flags_; }
         private:
             std::string name_;
             int flags_;
