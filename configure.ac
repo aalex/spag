@@ -1,15 +1,18 @@
-AC_INIT(spag, 0.1.1, alexandre@quessy.net, spag)
+AC_INIT(spag, 0.1.1, alexandre@quessy.net)
 AC_PREREQ(2.53)
-AC_COPYRIGHT(GNU General Public License)
-AC_CONFIG_SRCDIR(cofig.h)
+#AC_COPYRIGHT(GNU General Public License)
+AC_CONFIG_HEADER(src/config.h)
+AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([$PACKAGE_TARNAME], [$PACKAGE_VERSION])
 AC_PROG_CXX
 #AC_LIBTOOL_WIN32_DLL
 AC_LIBTOOL_DLOPEN
 AM_PROG_LIBTOOL
-ROOT_PATH
-AC_CONFIG_FILES(
+# ROOT_PATH
+AC_SUBST(CXXFLAGS, " -O2 -Wall -Werror -Wextra -Wfatal-errors") 
+AC_CONFIG_FILES([
     Makefile
-    src/Makefile)
+    src/Makefile
+    ])
 AC_OUTPUT
 

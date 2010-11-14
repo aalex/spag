@@ -24,7 +24,7 @@
 
 namespace spag
 {
-     std::string &Machine::startup()
+     const std::string &Machine::startup()
      {
         return root_->enter();
      }

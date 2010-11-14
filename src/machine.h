@@ -41,7 +41,7 @@ namespace spag
             Machine(State *root) :
                 root_(root)
             { }
-            std::string &startup();
+            const std::string &startup();
             bool trigger(std::string &event);
     };
 }; // spag
