@@ -17,14 +17,4 @@
  * You should have received a copy of the GNU General Public License
  * along with SPAG.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-#ifndef __SPAG_H__
-#define __SPAG_H__
-/**
- * SPAG is a Finite State Machine library.
- */
-#include "rule.h"
-#include "state.h"
-#include "machine.h"
-
-#endif
+#include "spag.h"
