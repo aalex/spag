@@ -1,7 +1,7 @@
 AC_INIT(spag, 0.1.1, alexandre@quessy.net)
 AC_PREREQ(2.53)
 #AC_COPYRIGHT(GNU General Public License)
-AC_CONFIG_HEADER(src/config.h)
+AC_CONFIG_HEADER(spag/config.h)
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([$PACKAGE_TARNAME], [$PACKAGE_VERSION])
 AC_PROG_CXX
@@ -12,7 +12,7 @@ AM_PROG_LIBTOOL
 AC_SUBST(CXXFLAGS, " -O2 -Wall -Werror -Wextra -Wfatal-errors") 
 AC_CONFIG_FILES([
     Makefile
-    src/Makefile
+    spag/Makefile
     ])
 AC_OUTPUT
 
