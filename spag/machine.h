@@ -28,22 +28,22 @@
 
 namespace spag
 {
-    /**
-     * Finite state machine.
-     *
-     * Transitions between states are triggered by events.
-     */
-    class Machine
-    {
-        private:
-            State *root_;
-        public:
-            Machine(State *root) :
-                root_(root)
-            { }
-            const std::string &startup();
-            bool trigger(std::string &event);
-    };
-}; // spag
+/**
+ * Finite state machine.
+ *
+ * Transitions between states are triggered by events.
+ */
+class Machine
+{
+    private:
+        State *root_;
+    public:
+        Machine(State *root) :
+            root_(root)
+        { }
+        const std::string &startup();
+        bool trigger(std::string &event);
+};
+} // end of namespace
 
 #endif

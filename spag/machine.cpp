@@ -24,14 +24,16 @@
 
 namespace spag
 {
-     const std::string &Machine::startup()
-     {
-        return root_->enter();
-     }
-     bool Machine::trigger(std::string &event)
-     {
-         Rule *rule = root_->find_rule(event);
-         (void) rule; // TODO
-         return true;
-     }
-}; // spag
+
+const std::string &Machine::startup()
+{
+   return root_->enter();
+}
+bool Machine::trigger(std::string &event)
+{
+    Rule *rule = root_->find_rule(event);
+    (void) rule; // TODO
+    return true;
+}
+
+}; // end of namespace
